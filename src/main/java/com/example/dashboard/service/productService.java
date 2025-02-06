@@ -31,4 +31,8 @@ public class productService {
     public List<Product> getAllProducts() {
         return this.prepo.findAll();
     }
+
+    public Product saveProduct(Product product) {
+        return prepo.save(product);
+    }
 }

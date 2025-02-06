@@ -37,4 +37,10 @@ public class productController {
         List<Product> products = pservice.getAllProducts();
         return ResponseEntity.ok(products);
     }
+
+    @PostMapping("/product")
+    public ResponseEntity<Product> addProduct(@RequestBody Product product) {
+        Product savedProduct = pservice.saveProduct(product);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedProduct);
+    }
 }
